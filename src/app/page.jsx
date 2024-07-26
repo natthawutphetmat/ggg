@@ -40,7 +40,7 @@ export default function Page() {
 
     const Clickitem = (e) => {
         if (targetUrl) {
-         window.location.href="https://cxxx.vercel.app";
+         window.location.href="https://cxxx.vercel.app/home";
         } else {
             console.error('Target URL is not set');
         }
