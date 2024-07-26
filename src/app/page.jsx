@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
+
 
 async function fetchData() {
     const res = await fetch('https://api.ca7mobile.com/get', {
@@ -20,6 +22,10 @@ export default function Page() {
     const router = useRouter();
     const [targetUrl, setTargetUrl] = useState('');
 
+const router = useRouter()
+
+
+    
     useEffect(() => {
         // Fetch data from API
         fetchData()
@@ -28,12 +34,13 @@ export default function Page() {
 
         // Set target URL from environment variables
         setTargetUrl(process.env.NEXT_PUBLIC_TARGET_URL);
+        
     }, []);
 
 
     const Clickitem = (e) => {
         if (targetUrl) {
-            window.open(targetUrl, '_blank'); // เปิด URL ในหน้าใหม่
+           router.push('https://cxxx.vercel.app/')
         } else {
             console.error('Target URL is not set');
         }
