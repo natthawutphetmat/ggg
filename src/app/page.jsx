@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useRouter } from 'next/navigation'
+ 
 
 
 async function fetchData() {
@@ -22,7 +22,7 @@ export default function Page() {
     const router = useRouter();
     const [targetUrl, setTargetUrl] = useState('');
 
-const router = useRouter()
+ 
 
 
     
@@ -40,7 +40,7 @@ const router = useRouter()
 
     const Clickitem = (e) => {
         if (targetUrl) {
-           router.push('https://cxxx.vercel.app/')
+         window.location.href="https://cxxx.vercel.app";
         } else {
             console.error('Target URL is not set');
         }
