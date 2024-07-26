@@ -2,8 +2,8 @@ import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/app.css";
 import "./styles/mobile.css";
+ import Script from 'next/script';
  
-import Script from "next/script";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +16,23 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    
+   <head>
+   <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11315628389"
+        ></Script>
+        <Script
+          id="gtag-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-11315628389');
+            `,
+          }}
+        />
+     </head>
       <body className={inter.className}>  
         
         {children}
